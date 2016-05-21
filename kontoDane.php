@@ -11,14 +11,12 @@ if (isset($_SESSION['autoryzacja'])) {
     } else {
         header('WWW-Authenticate: Basic realm="My Realm"');
         header('HTTP/1.0 401 Unauthorized');
-        //die (header('Location: konto.php'));
         exit('Musisz podać nick i haslo aby zmienic dane osobowe.');
     }
 } else {
     $_SESSION['autoryzacja'] = true;
     header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
-   // die (header('Location: konto.php'));
     exit('Musisz podać nick i haslo aby zmienic dane osobowe.');
 }
 if (isset($_POST['submitDane'])) {
