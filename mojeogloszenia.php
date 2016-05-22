@@ -62,7 +62,7 @@
             while ($r[] = mysqli_fetch_object($wynik));
             for ($row = 0; $row < $num_rows; $row++) {
                 echo '<form  method="post" onsubmit="return confirm("czy napewno chcesz modyfikować ogłoszenie?")">';
-                echo ' <fieldset> ';
+                echo ' <fieldset>';
                 echo '<input type="hidden" value="' . $r[$row]->idogloszenia . '" name="idogloszenia"/>';
                 echo ' Tytuł: <br /> <input type="text" name="tytul" value="' . $r[$row]->tytul . '"  /> <br />   ';
                 echo ' Treść: <br /> <textarea cols="60" rows="25" name="tresc" >' . $r[$row]->tresc . '</textarea> <br />';
@@ -79,7 +79,7 @@
                     }
                 }
                 echo '  <br /> <input type="submit"  value="Usuń" name="usun" /> ';
-                echo '  <input type="submit"  value="Zmień" name="zmien" /><br /> ';
+                echo '  <input type="submit"  value="Modyfikuj" name="zmien" /><br /> ';
                 echo '  </fieldset></form>';
             }
         }

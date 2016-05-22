@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['zalogowany'])) {
     header('Location: index.php');
-    exit();  
+    exit();
 }
 ?>
 <!DOCTYPE html 
@@ -13,15 +13,12 @@ if (!isset($_SESSION['zalogowany'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Ogloszenia lokalne</title>
-        <script type="text/javascript">
-            function refresh_spis() {
-              //  document.getElementById("spis").contentWindow.location.reload(true);
-                parent.frames["spis"].location.reload();
-            }</script>
+        <script src="outjs.js"></script>
     </head>
-    <H3 align=center>Zostałeś zalogowany</h3>
-    <script>
-        refresh_spis();
-        
-    </script>
+    <body>
+        <H3 align=center>Zostałeś zalogowany</h3>
+        <script>
+            refresh_spis();
+        </script>
+    </body>
 </html>

@@ -13,13 +13,13 @@ session_unset();
     <head>
         <meta charset="iso-8859-2"/>
         <title>Ogłoszenia Lokalne</title>
-        <script> function refresh_spis() {
-                parent.spis.location.reload();
-            }</script>
+        <script src="outjs.js"></script>
     </head>
-    <H3 align=center>Zostałeś wylogowany</h3>
-    <script>
-        refresh_spis();
-    </script>
+    <body>
+        <H3 align=center>Zostałeś wylogowany</h3>
+        <script>
+            refresh_spis();
+        </script>
+    </body>
 
 </html>

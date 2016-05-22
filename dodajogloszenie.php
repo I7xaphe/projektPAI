@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="ourcss.css" type="text/css" />
 <?php
 session_start();
 if (!isset($_SESSION['zalogowany'])) {
@@ -73,39 +72,18 @@ if (isset($_POST['tytul'])) {
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2" />
         <meta name="Author" content="Autor strony" />
         <title>Ogłoszenia Lokalne</title>
-        <script type="text/javascript">
-            function dodaj_element(kontener) {
-                var kontener = document.getElementById(kontener);              
-                //dodanie linii
-                //var nowaLinia = document.createElement("br");
-                //kontener.appendChild(nowaLinia);
-                //dodanie przycisku
-                var znacznik = document.createElement('input');
-                znacznik.setAttribute('type', 'file');
-                znacznik.setAttribute('name', 'new_picture[]');
-                znacznik.setAttribute('value', 'plik');
-                znacznik.className = 'upload';
-                kontener.appendChild(znacznik); 
-                
-            }
-
-        </script>
+        
+        <link rel="stylesheet" href="ourcss.css" type="text/css" />
+        <script src="outjs.js"></script>
         <style type="text/css">
-            <!--
+            
             input.upload { display: block; }
-            -->
+    
         </style>
     </head>
-    <link rel="stylesheet" href="ourcss.css" type="text/css" />
-    <body>    
-        <?php
 
-        function recursion() {
-
-            echo "dzilla";
-        }
-        ?>
-
+    <body>  
+        
         <form method="post" enctype="multipart/form-data" >
             <fieldset>
                 <legend>Dodaj Ogłoszene</legend>  
@@ -122,7 +100,7 @@ if (isset($_POST['tytul'])) {
             </fieldset>
         </form>
 
-
+        
 
     </body>
 </html>

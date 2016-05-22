@@ -22,7 +22,7 @@
             } else {
                 header('WWW-Authenticate: Basic realm="My Realm"');
                 header('HTTP/1.0 401 Unauthorized');
-                exit('Musisz podać aktualne nazwe i haslo aby zmienic haslo na nowe.');
+                exit('<h3 align=center>Musisz podać aktualne nazwe i haslo aby zmienic haslo na nowe.</h3>');
             }
         } else {
             $_SESSION['autoryzacja'] = true;
