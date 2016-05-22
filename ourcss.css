@@ -45,7 +45,12 @@ input[type=button]{
     color: #122b40;
     padding: 3px 0px;
 }
-input[type=file]:hover,input[type=button]:hover{
+img{
+    margin-top: 10px;
+    margin-right: 10px;
+    
+}
+input[type=file]:hover,input[type=button]:hover{   
     width: 200px;
     background-color: #cca;
     color: white;
