@@ -29,7 +29,7 @@
                     @unlink(MM_UPLOADPATH . $_POST['zdjecie'][$i++]);
                 }
 
-                echo "<H3 align=center>Ogloszenie " . $idogloszenia . " zostało usunięte</h3>";
+                echo '<H3 align=center class="correct">Ogloszenie ' . $idogloszenia . " zostało usunięte</h3>";
             } else {
                 echo "Błąd ogloszenie nie zstało usunięte";
             }
@@ -43,7 +43,7 @@
             $tresc = $_POST['tresc'];
             $tytul = $_POST['tytul'];
             if ($polaczenie->query("UPDATE ogloszenia SET tytul='$tytul',tresc='$tresc',dataogloszenia=CURRENT_TIMESTAMP WHERE idogloszenia='$idogloszenia'")) {
-                echo "<H3 align=center>Ogloszenie " . $idogloszenia . " zostało zmienione</h3>";
+                echo '<H3 align=center class="correct">Ogloszenie ' . $idogloszenia . " zostało zmienione</h3>";
             } else {
                 echo "Błąd ogloszenie nie zostało zmienione";
             }
