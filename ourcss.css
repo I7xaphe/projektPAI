@@ -50,6 +50,7 @@ img{
     margin-right: 10px;
     
 }
+
 input[type=file]:hover,input[type=button]:hover{   
     width: 200px;
     background-color: #cca;
@@ -111,6 +112,31 @@ form{
     padding-top: 5px;
     padding-bottom: 5px;
 }
+ /*---------------------------------------------------------------------------------------*/
+menu {list-style-type:none;
+      margin:0;
+      padding:0; 
+      width:150px;}
+
+
+menu a{
+     text-decoration:none;
+     display:block;
+     border-radius:5px;
+     background-color:#f7e1b5;
+     padding:8px 5px;
+     color:#707070; 
+     text-align:left;
+}
+
+
+menu a:hover {
+    color:#000;
+    box-shadow:0 0 8px 1px  inset;
+    border-radius:6px;
+}
+
+/*---------------------------------------------------------------------------------------*/
 html {
     /*
 wyswietla ogloszenia na srodku iframe aktualna strona
