@@ -44,6 +44,7 @@ if (isset($_POST['tytul'])) {
                         @unlink($_FILES['new_picture']['tmp_name'][$nrZdjecia]);
                         echo 'Musisz wybrać plik graficzny GIF, JPEG lub PNG o rozmiarze nie większym niż ' . (MM_MAXFILESIZE / 1024) .
                         ' (w kilobajtach) i ' . MM_MAXIMGWIDTH . 'x' . MM_MAXIMGHEIGHT . ' (w pikselach).';
+                        exit();
                     }
                 }else{
                     $czyJestZdjaca = false;

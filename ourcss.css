@@ -72,6 +72,13 @@ fieldset
     margin-bottom: 10px;
 
 }
+.correct
+{
+    color:green;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
 textarea {
     width: 100%; 
     height: fit-content;
@@ -82,6 +89,8 @@ textarea {
     border-radius: 10px;
     background-color: #f8f8f8;
     resize: none;
+    margin-top: 10px;
+    margin-bottom : 10px;
 }
 form{
     margin-top: 10px;
@@ -108,7 +117,6 @@ body {
     vertical-align: middle;
 }
 input[type=checkbox]{
-    position: relative;
     display: block;
     width: 20px;
     height: 20px;

@@ -20,30 +20,30 @@ if (isset($_POST['submitLogin'])) {
             if ($rezultat->num_rows) {
                 $wiersz = $rezultat->fetch_assoc();
                 if (password_verify($haslo, $wiersz['haslo'])) {
-                    if($_POST['zapamietaj']!=null){
-                        setcookie('username', $login,time()+(86400*30),"/");
-                        setcookie('password', $haslo,time()+(86400*30),"/");
+                    if ($_POST['zapamietaj'] != null) {
+                        setcookie('username', $login, time() + (86400 * 30), "/");
+                        setcookie('password', $haslo, time() + (86400 * 30), "/");
                     }
                     $_SESSION['zalogowany'] = true;
-                    $_SESSION['haslo'] = $wiersz['haslo'];                    
+                    $_SESSION['haslo'] = $wiersz['haslo'];
                     $_SESSION['id'] = $wiersz['id'];
                     $_SESSION['nazwauzytkownika'] = $wiersz['nazwauzytkownika'];
                     $_SESSION['email'] = $wiersz['email'];
                     $_SESSION['imie'] = $wiersz['imie'];
                     $_SESSION['nazwisko'] = $wiersz['nazwisko'];
                     $_SESSION['datarejestracji'] = $wiersz['datarejestracji'];
-                    $_SESSION['kontakt'] = $wiersz['kontakt'];                   
+                    $_SESSION['kontakt'] = $wiersz['kontakt'];
                     unset($_SESSION['blad']);
                     $rezultat->free_result();
                     header('Location: zaloguj2.php');
                 } else {
-                    $_SESSION['blad'] = '<span style="color:red">Nieprawidłowe hasło !</span>';
+                    $_SESSION['blad'] = '<span class="error">Nieprawidłowe hasło!</span>';
                 }
             } else {
-                $_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login!</span>';
+                $_SESSION['blad'] = '<span class="error">Nieprawidłowy login!</span>';
             }
         }
-        
+
         $polaczenie->close();
     }
 }
@@ -57,21 +57,22 @@ if (isset($_POST['submitLogin'])) {
         <title>Ogloszenia lokalne</title>
     </head>
     <body>
-  
+
         <form method="post">
             <fieldset>
                 <legend>Zaloguj się</legend>
-            Login: <br /> <input type="text" name="login" value=' ' /> <br />
-            Hasło: <br /> <input type="password" name="haslo" value='' /> <br />
-            Zapamietaj mnie:<br /><input type="checkbox" name="zapamietaj" /><br />
-            <input type="submit" value="Zaloguj się" name="submitLogin" />
+                Login: <br /> <input type="text" name="login" value=' ' /> <br />
+                Hasło: <br /> <input type="password" name="haslo" value='' /> <br />
+                Zapamietaj mnie:<br /><input type="checkbox" name="zapamietaj" /><br />
+                <?php
+                if (isset($_SESSION['blad'])) {
+                    echo $_SESSION['blad']."<br />";
+                }
+                unset($_SESSION['blad']);
+                ?>
+                <input type="submit" value="Zaloguj się" name="submitLogin" />
             </fieldset>
         </form>
-        <?php
-        if (isset($_SESSION['blad'])) {
-          echo $_SESSION['blad'];
-        }
-         unset($_SESSION['blad']);          
-        ?>
+
     </body>
 </html>

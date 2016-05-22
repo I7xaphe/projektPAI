@@ -12,7 +12,8 @@ if (!isset($_SESSION['zalogowany'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Ogloszenia lokalne</title>
-    
+
+            
     </head>
 
     <body>
@@ -22,7 +23,7 @@ if (!isset($_SESSION['zalogowany'])) {
                 
                 <?php
                 if (isset($_SESSION['aktualizacja_dane'])) {
-                    echo '<span style="color:green;">'.$_SESSION['aktualizacja_dane'].'</span>';
+                    echo '<span class="correct">'.$_SESSION['aktualizacja_dane'].'</span><br />';
                     unset($_SESSION['aktualizacja_dane']);
                 }
                 ?>
@@ -51,7 +52,7 @@ if (!isset($_SESSION['zalogowany'])) {
                 <br />
                 <?php
                 if (isset($_SESSION['error_dane'])) {
-                    echo '<span style="color:red;">'.$_SESSION['error_dane'].'</span>';
+                    echo '<span class="error">'.$_SESSION['error_dane'].'</span><br />';
                     unset($_SESSION['error_dane']);
                 }
                 ?>
@@ -64,7 +65,7 @@ if (!isset($_SESSION['zalogowany'])) {
             <fieldset>
                 <?php
                 if (isset($_SESSION['aktualizacja_haslo'])) {
-                    echo '<span style="color:green;">'.$_SESSION['aktualizacja_haslo'].'</span>';
+                    echo '<span class="correct">'.$_SESSION['aktualizacja_haslo'].'</span><br />';
                     unset($_SESSION['aktualizacja_haslo']);
                 }
                 ?>
@@ -78,7 +79,7 @@ if (!isset($_SESSION['zalogowany'])) {
                 <br />
                 <?php
                 if (isset($_SESSION['error_haslo'])) {
-                    echo '<span style="color:red;">'.$_SESSION['error_haslo'].'</span>';
+                    echo '<span class="error">'.$_SESSION['error_haslo'].'</span><br />';
                     unset($_SESSION['error_haslo']);
                 }
                 ?>
