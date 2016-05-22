@@ -29,7 +29,7 @@
             for ($row = 0; $row < $num_rows; $row++) {
                 echo '<form >';
                 echo ' <fieldset> ';
-                echo ' Tytuł: <br /> <input type="text" value=' . $r[$row]->tytul . ' readonly /> <br />  ';
+                echo ' Tytuł: <br /> <input type="text" readonly  value="'. $r[$row]->tytul .'" /> <br />  ';
                 echo ' Treść: <br /> <textarea cols="60" rows="25" readonly>' . $r[$row]->tresc . '</textarea> <br /> ';
                 echo ' Data: <br /> <input type="text" value=' . $r[$row]->dataogloszenia . ' readonly /> <br />';
                 echo 'Użytkownik: <br /> <input type="text" value=' . $r[$row]->nazwauzytkownika . ' readonly /> <br />';
