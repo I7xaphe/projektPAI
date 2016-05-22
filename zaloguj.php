@@ -71,7 +71,7 @@ if (isset($_POST['submitLogin'])) {
                 }
                 unset($_SESSION['blad']);
                 ?>
-                <input type="submit" value="Zaloguj się" name="submitLogin" />
+                <center><input type="submit" value="Zaloguj się" name="submitLogin" /></center>
             </fieldset>
         </form>
 

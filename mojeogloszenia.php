@@ -66,7 +66,7 @@
                 echo '<input type="hidden" value="' . $r[$row]->idogloszenia . '" name="idogloszenia"/>';
                 echo ' Tytuł: <br /> <input type="text" name="tytul" value="' . $r[$row]->tytul . '"  /> <br />   ';
                 echo ' Treść: <br /> <textarea cols="60" rows="25" name="tresc" >' . $r[$row]->tresc . '</textarea> <br />';
-                echo ' Data : <br /> <input type="text" readonly value="' . $r[$row]->dataogloszenia . '"  /> <br />';
+                echo ' Data : <br /> <input type="text" readonly value="' . $r[$row]->dataogloszenia . '"  /> <br /><center>';
                 while (is_file(MM_UPLOADPATH . $r[$row]->zdjecie)) {
                     echo '<img src="' . MM_UPLOADPATH . $r[$row]->zdjecie . '"/>';
                     echo '<input type="hidden" value="' . $r[$row]->zdjecie . '" name="zdjecie[]"  />';
@@ -80,7 +80,7 @@
                 }
                 echo '  <br /> <input type="submit"  value="Usuń" name="usun" /> ';
                 echo '  <input type="submit"  value="Modyfikuj" name="zmien" /><br /> ';
-                echo '  </fieldset></form>';
+                echo '  </center></fieldset></form>';
             }
         }
         $polaczenie->close();

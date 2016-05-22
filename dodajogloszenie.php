@@ -94,12 +94,12 @@ if (!isset($_SESSION['zalogowany'])) {
                 Treść: <br /> <textarea  name="tresc" cols="60" rows="25"></textarea> <br />
                 Zdjęcie:  
                 <!-------------------------------------------//-->        
-                <div class="upload" id="pliki">
+                <center><div class="upload" id="pliki">
                     <input type="button" value="Dodaj zdjęcie" onclick="dodaj_element('pliki');" />
                     <br />
                 </div> 
                 <!-------------------------------------------//-->           
-                <br /> <input type="submit" value="Zatwierdź" />
+                <br /> <input type="submit" value="Zatwierdź" /></center>
             </fieldset>
         </form>
 

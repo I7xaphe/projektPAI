@@ -226,7 +226,7 @@ if (isset($_POST['submit'])) {
 
                 <br />
 
-                <input type="submit" name="submit" value="Zarejestruj się" />
+                <center><input type="submit" name="submit" value="Zarejestruj się" /><center>
             </fieldset>
         </form>
 

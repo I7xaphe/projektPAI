@@ -57,7 +57,7 @@ if (!isset($_SESSION['zalogowany'])) {
                 }
                 ?>
 
-                <input type="submit" value="Zmień dane" name="submitDane"/>
+                <center><input type="submit" value="Zmień dane" name="submitDane"/></center>
 
             </fieldset>
         </form>
@@ -83,7 +83,7 @@ if (!isset($_SESSION['zalogowany'])) {
                     unset($_SESSION['error_haslo']);
                 }
                 ?>
-                <input type="submit" value="Zmień haslo" name="submitHaslo"  />
+                <center><input type="submit" value="Zmień haslo" name="submitHaslo"  /></center>
 
             </fieldset>
         </form>
