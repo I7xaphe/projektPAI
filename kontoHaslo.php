@@ -1,12 +1,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
- <?php
-        session_start();
-        if (!isset($_SESSION['zalogowany'])) {
-            header('Location: index.php');
-            exit();
-        }
- ?>
+    <?php
+    session_start();
+    if (!isset($_SESSION['zalogowany'])) {
+        header('Location: index.php');
+        exit();
+    }
+    ?>
 <html lang="pl">
     <head>
         <meta charset="utf-8" />
@@ -22,13 +22,13 @@
             } else {
                 header('WWW-Authenticate: Basic realm="My Realm"');
                 header('HTTP/1.0 401 Unauthorized');
-                exit('<h3 align=center>Musisz podać aktualne nazwe i haslo aby zmienic haslo na nowe.</h3>');
+                exit('<h3 align=center class="error">Musisz podać aktualne nazwe i haslo aby zmienic haslo na nowe.</h3>');
             }
         } else {
             $_SESSION['autoryzacja'] = true;
             header('WWW-Authenticate: Basic realm="My Realm"');
             header('HTTP/1.0 401 Unauthorized');
-            exit('Musisz podać aktualne nazwe i haslo aby zmienic haslo na nowe.');
+            exit('<h3 align=center class="error">Musisz podać aktualne nazwe i haslo aby zmienic haslo na nowe.</h3>');
         }
         if (isset($_POST['submitHaslo'])) {
             require_once "connect.php";

@@ -13,10 +13,11 @@ session_unset();
     <head>
         <meta charset="iso-8859-2"/>
         <title>Ogłoszenia Lokalne</title>
+        <link rel="stylesheet" href="ourcss.css" type="text/css" />
         <script src="outjs.js"></script>
     </head>
     <body>
-        <H3 align=center>Zostałeś wylogowany</h3>
+        <H3 align=center class="correct">Zostałeś wylogowany</h3>
         <script>
             refresh_spis();
         </script>

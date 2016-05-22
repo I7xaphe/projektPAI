@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="ourcss.css" type="text/css" />
+
 <?php
 session_start();
 
@@ -55,6 +55,7 @@ if (isset($_POST['submitLogin'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Ogloszenia lokalne</title>
+        <link rel="stylesheet" href="ourcss.css" type="text/css" />
     </head>
     <body>
 
@@ -66,7 +67,7 @@ if (isset($_POST['submitLogin'])) {
                 Zapamietaj mnie:<br /><input type="checkbox" name="zapamietaj" /><br />
                 <?php
                 if (isset($_SESSION['blad'])) {
-                    echo $_SESSION['blad']."<br />";
+                    echo $_SESSION['blad'] . "<br />";
                 }
                 unset($_SESSION['blad']);
                 ?>

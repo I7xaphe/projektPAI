@@ -13,10 +13,11 @@ if (!isset($_SESSION['zalogowany'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Ogloszenia lokalne</title>
+        <link rel="stylesheet" href="ourcss.css" type="text/css" />
         <script src="outjs.js"></script>
     </head>
     <body>
-        <H3 align=center>Zostałeś zalogowany</h3>
+        <H3 align=center class="correct">Zostałeś zalogowany</h3>
         <script>
             refresh_spis();
         </script>

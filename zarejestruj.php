@@ -123,14 +123,6 @@ if (isset($_POST['submit'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Ogloszenia lokalne</title>
         <link rel="stylesheet" href="ourcss.css" type="text/css" />        
-        <style>
-            .error
-            {
-                color:red;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-        </style>
     </head>
 
     <body>
