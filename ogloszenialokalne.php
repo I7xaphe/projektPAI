@@ -1,11 +1,7 @@
-<?php
-session_start();
-if (!isset($_SESSION['zalogowany'])) {
-    header('Location: index.php');
-    exit();
-}
-?>
 
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html lang="pl">
     <head>
         <meta charset="utf-8" />
@@ -13,6 +9,7 @@ if (!isset($_SESSION['zalogowany'])) {
         <title>Ogloszenia lokalne</title>
     </head>
     <body>
-        <H3 align=center>Ogloszenie zostało dodane do twojego konta</h3>
+        <H1 align=center>OGŁOSZENIA LOKALNE</H1>
     </body>
+
 </html>

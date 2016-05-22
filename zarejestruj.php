@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
             //===============================================
             if ($wszystko_OK == true) {
                 if ($polaczenie->query("INSERT INTO zarejestrowani (id,haslo,nazwauzytkownika,email,imie,nazwisko,datarejestracji,kontakt)VALUES (NULL,'$haslo_hash','$nick', '$email','$imie','$nazwisko',NULL,'$kontakt')")) {
-                    echo "Zostales Zarejestrowany";
+                    echo "<H3 align=center>Zostałeś zarejestrowany</h3>";
                     exit();
                 } else {
                     throw new Exception($polaczenie->error);

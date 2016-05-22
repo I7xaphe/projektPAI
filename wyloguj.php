@@ -17,7 +17,7 @@ session_unset();
                 parent.spis.location.reload();
             }</script>
     </head>
-    zostałeś wylogowany
+    <H3 align=center>Zostałeś wylogowany</h3>
     <script>
         refresh_spis();
     </script>

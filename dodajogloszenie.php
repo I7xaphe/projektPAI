@@ -77,8 +77,8 @@ if (isset($_POST['tytul'])) {
             function dodaj_element(kontener) {
                 var kontener = document.getElementById(kontener);              
                 //dodanie linii
-                var nowaLinia = document.createElement("br");
-                kontener.appendChild(nowaLinia);
+                //var nowaLinia = document.createElement("br");
+                //kontener.appendChild(nowaLinia);
                 //dodanie przycisku
                 var znacznik = document.createElement('input');
                 znacznik.setAttribute('type', 'file');
@@ -113,7 +113,7 @@ if (isset($_POST['tytul'])) {
                 Treść: <br /> <textarea  name="tresc" cols="60" rows="25"></textarea> <br />
                 Zdjęcie:  
                 <!-------------------------------------------//-->        
-                <div id="pliki">
+                <div class="upload" id="pliki">
                     <input type="button" value="Dodaj zdjęcie" onclick="dodaj_element('pliki');" />
                     <br />
                 </div> 

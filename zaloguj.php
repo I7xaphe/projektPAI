@@ -62,7 +62,7 @@ if (isset($_POST['submitLogin'])) {
             <fieldset>
                 <legend>Zaloguj się</legend>
             Login: <br /> <input type="text" name="login" value=' ' /> <br />
-            Hasło: <br /> <input type="password" name="haslo" value='' /> <br /><br />
+            Hasło: <br /> <input type="password" name="haslo" value='' /> <br />
             Zapamietaj mnie:<br /><input type="checkbox" name="zapamietaj" /><br />
             <input type="submit" value="Zaloguj się" name="submitLogin" />
             </fieldset>

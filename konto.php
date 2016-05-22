@@ -12,11 +12,7 @@ if (!isset($_SESSION['zalogowany'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
         <title>Ogloszenia lokalne</title>
-        <script src='https://www.google.com/recaptcha/api.js'></script>
-
-        <script> function refresh_spis() {
-                parent.spis.location.reload();
-            }</script>      
+    
     </head>
 
     <body>
