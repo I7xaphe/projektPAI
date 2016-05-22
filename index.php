@@ -38,8 +38,6 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
         <table align="center">
             <tr>
                 <th colspan="2"><iframe frameborder="6" scrolling="no"  height="80" width="888"  name="ogloszenie"  src="ogloszenialokalne.php" ></iframe></th>
-               
-            
             <tr>
                 <td ><iframe id='spis' frameborder="3" scrolling="no"  height="860" width="180"  name="spis"  src="spis.php" ></iframe></td>
                 <td><iframe frameborder="3"  scrolling="yes"  height="860" width="700"  name="AktualnaStrona" src="ogloszenie.php" ></iframe></td>

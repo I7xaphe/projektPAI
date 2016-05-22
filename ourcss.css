@@ -63,8 +63,7 @@ fieldset
     width: 550px;
     border-radius: 10px;
     align-content: center;
-    align-self: center;
-    
+    align-self: center;  
 }
 .error
 {
@@ -101,21 +100,18 @@ form{
     border: 2px solid #ccc;
     border-radius: 10px;
     background-color: white;
-    
-    
+
 }iframe { 
     background-color: ivory; 
     padding-top: 5px;
     padding-bottom: 5px;
 }
-
 html {
+    /*
+wyswietla ogloszenia na srodku iframe aktualna strona
+*/
     display: table;
     margin: auto;
-}
-body {
-    display: table-cell;
-    vertical-align: middle;
 }
 input[type=checkbox]{
     display: block;

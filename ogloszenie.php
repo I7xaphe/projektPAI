@@ -31,9 +31,9 @@
                 echo ' <fieldset> ';
                 echo ' Tytuł: <br /> <input type="text" readonly  value="'. $r[$row]->tytul .'" /> <br />  ';
                 echo ' Treść: <br /> <textarea cols="60" rows="25" readonly>' . $r[$row]->tresc . '</textarea> <br /> ';
-                echo ' Data: <br /> <input type="text" value=' . $r[$row]->dataogloszenia . ' readonly /> <br />';
-                echo 'Użytkownik: <br /> <input type="text" value=' . $r[$row]->nazwauzytkownika . ' readonly /> <br />';
-                echo 'Kontakt: <br /> <input type="text" value=' . $r[$row]->kontakt . ' readonly/> <br />';
+                echo ' Data: <br /> <input type="text" value="' . $r[$row]->dataogloszenia . '" readonly /> <br />';
+                echo 'Użytkownik: <br /> <input type="text" value="' . $r[$row]->nazwauzytkownika . '" readonly /> <br />';
+                echo 'Kontakt: <br /> <input type="text" value="' . $r[$row]->kontakt . '" readonly/> <br />';
                 while (is_file(MM_UPLOADPATH . $r[$row]->zdjecie)) {
                     echo '<img src="' . MM_UPLOADPATH . $r[$row]->zdjecie . '"/>';
                     echo '<input type="hidden" value="' . $r[$row]->zdjecie . '" name="zdjecie"  />';

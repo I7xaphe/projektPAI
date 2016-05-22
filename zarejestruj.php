@@ -4,6 +4,7 @@ if (isset($_POST['submit'])) {
     $wszystko_OK = true;
     //==========================================================================
     require_once "connect.php";
+    require_once "appvars.php";
     //nie pokazywało błedów
     mysqli_report(MYSQLI_REPORT_STRICT);
     if (!$polaczenie = new mysqli($host, $db_user, $db_password, $db_name)) {
@@ -12,9 +13,9 @@ if (isset($_POST['submit'])) {
     //Sprawdź poprawność nickname'a
     $nick = $_POST['nick'];
     //Sprawdzenie długości nicka
-    if ((strlen($nick) < 3) || (strlen($nick) > 15)) {
+    if ((strlen($nick) < MM_NICK_MIN) || (strlen($nick) > MM_NICK_MAX)) {
         $wszystko_OK = false;
-        $_SESSION['e_nick'] = "Nick musi posiadać od 3 do 20 znaków!";
+        $_SESSION['e_nick'] = "Nick musi posiadać od " . MM_NICK_MIN . " do " . MM_NICK_MAX . " znaków!";
     }
     if (ctype_alnum($nick) == false) {
         $wszystko_OK = false;
@@ -43,7 +44,7 @@ if (isset($_POST['submit'])) {
     }
     //==========================================================================
     // Sprawdź poprawność kontaktu
-    $kontakt = mysqli_real_escape_string($polaczenie,$_POST['kontakt']);
+    $kontakt = mysqli_real_escape_string($polaczenie, $_POST['kontakt']);
 
     if ($kontakt != $_POST['kontakt']) {
         $wszystko_OK = false;
@@ -54,9 +55,9 @@ if (isset($_POST['submit'])) {
     $haslo1 = $_POST['haslo1'];
     $haslo2 = $_POST['haslo2'];
 
-    if ((strlen($haslo1) < 3) || (strlen($haslo1) > 15)) {
+    if ((strlen($haslo1) < MM_HASLO_MIN) || (strlen($haslo1) > MM_HASLO_MAX)) {
         $wszystko_OK = false;
-        $_SESSION['e_haslo'] = "Hasło musi posiadać od 8 do 20 znaków!";
+        $_SESSION['e_haslo'] = "Hasło musi posiadać od od " . MM_HASLO_MIN . " do " . MM_HASLO_MAX . " znaków!";
     }
 
     if ($haslo1 != $haslo2) {
@@ -84,7 +85,7 @@ if (isset($_POST['submit'])) {
             $rezultat = $polaczenie->query("SELECT id FROM zarejestrowani WHERE email='$email'");
             if (!$rezultat)
                 throw new Exception($polaczenie->error);
-            if ($rezultat->num_rows> 0) {
+            if ($rezultat->num_rows > 0) {
                 $wszystko_OK = false;
                 $_SESSION['e_email'] = "Istnieje już konto przypisane do tego adresu e-mail!";
             }
@@ -92,7 +93,7 @@ if (isset($_POST['submit'])) {
             //Czy nick jest już zarezerwowany?
             $rezultat = $polaczenie->query("SELECT id FROM zarejestrowani WHERE nazwauzytkownika='$nick'");
             if (!$rezultat)
-                throw new Exception($polaczenie->error);           
+                throw new Exception($polaczenie->error);
             if ($rezultat->num_rows > 0) {
                 $wszystko_OK = false;
                 $_SESSION['e_nick'] = "Istnieje już gracz o takim nicku! Wybierz inny.";
@@ -147,7 +148,7 @@ if (isset($_POST['submit'])) {
 
                 <?php
                 if (isset($_SESSION['e_nick'])) {
-                    echo '<div class="error">' . $_SESSION['e_nick'] . '</div>';
+                    echo '<span class="error">' . $_SESSION['e_nick'] . '</span></br>';
                     unset($_SESSION['e_nick']);
                 }
                 ?>
@@ -161,7 +162,7 @@ if (isset($_POST['submit'])) {
 
                 <?php
                 if (isset($_SESSION['e_imie'])) {
-                    echo '<div class="error">' . $_SESSION['e_imie'] . '</div>';
+                    echo '<span class="error">' . $_SESSION['e_imie'] . '</span></br>';
                     unset($_SESSION['e_imie']);
                 }
                 ?>   
@@ -175,7 +176,7 @@ if (isset($_POST['submit'])) {
 
                 <?php
                 if (isset($_SESSION['e_nazwisko'])) {
-                    echo '<div class="error">' . $_SESSION['e_nazwisko'] . '</div>';
+                    echo '<span class="error">' . $_SESSION['e_nazwisko'] . '</span></br>';
                     unset($_SESSION['e_nazwisko']);
                 }
                 ?>
@@ -189,7 +190,7 @@ if (isset($_POST['submit'])) {
 
                 <?php
                 if (isset($_SESSION['e_email'])) {
-                    echo '<div class="error">' . $_SESSION['e_email'] . '</div>';
+                    echo '<span class="error">' . $_SESSION['e_email'] . '</span></br>';
                     unset($_SESSION['e_email']);
                 }
                 ?>
@@ -203,7 +204,7 @@ if (isset($_POST['submit'])) {
 
                 <?php
                 if (isset($_SESSION['e_kontakt'])) {
-                    echo '<div class="error">' . $_SESSION['e_kontakt'] . '</div>';
+                    echo '<span class="error">' . $_SESSION['e_kontakt'] . '</span></br>';
                     unset($_SESSION['e_kontakt']);
                 }
                 ?>
@@ -215,12 +216,7 @@ if (isset($_POST['submit'])) {
                 }
                 ?>" name="haslo1" /><br />
 
-                <?php
-                if (isset($_SESSION['e_haslo'])) {
-                    echo '<div class="error">' . $_SESSION['e_haslo'] . '</div>';
-                    unset($_SESSION['e_haslo']);
-                }
-                ?>		
+
                 <!--==========================================================================-->
                 Powtórz hasło: <br /> <input type="password" value="<?php
                 if (isset($_SESSION['fr_haslo2'])) {
@@ -228,6 +224,13 @@ if (isset($_POST['submit'])) {
                     unset($_SESSION['fr_haslo2']);
                 }
                 ?>" name="haslo2" /><br />
+
+                <?php
+                if (isset($_SESSION['e_haslo'])) {
+                    echo '<span class="error">' . $_SESSION['e_haslo'] . '</span></br>';
+                    unset($_SESSION['e_haslo']);
+                }
+                ?>
 
                 <br />
 
